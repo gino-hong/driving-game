@@ -1,7 +1,6 @@
 var $f1 = document.querySelector('.f1');
 
 document.addEventListener('keydown', function (e) {
-  // console.log(e.key);
   if (e.key === 'ArrowUp') {
     $f1.className = 'f1 north';
   } else if (e.key === 'ArrowDown') {
@@ -19,7 +18,7 @@ var x = 0;
 
 function start() {
   if ($f1.className === 'f1 east') {
-    x = x + 7;
+    x = x + 22;
     $f1.style.left = x + 'px';
   }
 }
