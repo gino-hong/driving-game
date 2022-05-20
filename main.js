@@ -1,5 +1,9 @@
 var $f1 = document.querySelector('.f1');
 
+var isTheCarMoving = false;
+
+var movement;
+
 document.addEventListener('keydown', function (e) {
   if (e.key === 'ArrowUp') {
     $f1.className = 'f1 north';
@@ -10,7 +14,13 @@ document.addEventListener('keydown', function (e) {
   } else if (e.key === 'ArrowLeft') {
     $f1.className = 'f1 west';
   } else if (e.key === ' ') {
-    setInterval(start, 16);
+    if (isTheCarMoving === false) {
+      movement = setInterval(start, 16);
+      isTheCarMoving = true;
+    } else if (isTheCarMoving === true) {
+      clearInterval(movement);
+      isTheCarMoving = false;
+    }
   }
 });
 
