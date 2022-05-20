@@ -9,5 +9,16 @@ document.addEventListener('keydown', function (e) {
     $f1.className = 'f1 east';
   } else if (e.key === 'ArrowLeft') {
     $f1.className = 'f1 west';
+  } else if (e.key === ' ') {
+    setInterval(start, 16);
   }
 });
+
+var x = 0;
+
+function start() {
+  if ($f1.className === 'f1 east') {
+    x = x + 22;
+    $f1.style.left = x + 'px';
+  }
+}
