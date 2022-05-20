@@ -21,6 +21,12 @@ document.addEventListener('keydown', function (e) {
       clearInterval(movement);
       isTheCarMoving = false;
     }
+  } else if (e.key === 'q') {
+    speed = 10;
+  } else if (e.key === 'w') {
+    speed = 15;
+  } else if (e.key === 'e') {
+    speed = 20;
   }
 });
 
