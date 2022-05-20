@@ -25,10 +25,21 @@ document.addEventListener('keydown', function (e) {
 });
 
 var x = 0;
+var y = 0;
+speed = 15;
 
 function start() {
   if ($f1.className === 'f1 east') {
-    x = x + 22;
+    x = x + speed;
     $f1.style.left = x + 'px';
+  } else if ($f1.className === 'f1 south') {
+    y = y + speed;
+    $f1.style.top = y + 'px';
+  } else if ($f1.className === 'f1 west') {
+    x = x - speed;
+    $f1.style.left = x + 'px';
+  } else if ($f1.className === 'f1 north') {
+    y = y - speed;
+    $f1.style.top = y + 'px';
   }
 }
