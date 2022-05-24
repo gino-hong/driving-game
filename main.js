@@ -1,4 +1,4 @@
-var $f1 = document.querySelector('.f1');
+var $image = document.querySelector('img');
 
 var isTheCarMoving = false;
 
@@ -6,13 +6,13 @@ var movement;
 
 document.addEventListener('keydown', function (e) {
   if (e.key === 'ArrowUp') {
-    $f1.className = 'f1 north';
+    $image.className = 'north';
   } else if (e.key === 'ArrowDown') {
-    $f1.className = 'f1 south';
+    $image.className = 'south';
   } else if (e.key === 'ArrowRight') {
-    $f1.className = 'f1 east';
+    $image.className = 'east';
   } else if (e.key === 'ArrowLeft') {
-    $f1.className = 'f1 west';
+    $image.className = 'west';
   } else if (e.key === ' ') {
     if (isTheCarMoving === false) {
       movement = setInterval(start, 16);
@@ -36,17 +36,36 @@ var y = 0;
 speed = 15;
 
 function start() {
-  if ($f1.className === 'f1 east') {
+  if ($image.className === 'east') {
     x = x + speed;
-    $f1.style.left = x + 'px';
-  } else if ($f1.className === 'f1 south') {
+    $image.style.left = x + 'px';
+  } else if ($image.className === 'south') {
     y = y + speed;
-    $f1.style.top = y + 'px';
-  } else if ($f1.className === 'f1 west') {
+    $image.style.top = y + 'px';
+  } else if ($image.className === 'west') {
     x = x - speed;
-    $f1.style.left = x + 'px';
-  } else if ($f1.className === 'f1 north') {
+    $image.style.left = x + 'px';
+  } else if ($image.className === 'north') {
     y = y - speed;
-    $f1.style.top = y + 'px';
+    $image.style.top = y + 'px';
   }
 }
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === '1') {
+    $image.src = 'images/f1.svg';
+    $image.alt = 'f1';
+  } else if (e.key === '2') {
+    $image.src = 'https://freesvg.org/img/1450414843.png';
+    $image.alt = 'dragon';
+  } else if (e.key === '3') {
+    $image.src = 'https://freesvg.org/img/travel-car-top_view_monsterbrain_remix.png';
+    $image.alt = 'yellow';
+  } else if (e.key === '4') {
+    $image.src = 'https://freesvg.org/img/wolf.png';
+    $image.alt = 'wolf';
+  } else if (e.key === '5') {
+    $image.src = 'https://freesvg.org/img/SimplePinkCarTopView.png';
+    $image.alt = 'pink';
+  }
+});
