@@ -7,13 +7,22 @@ img {
   position: absolute;
 }
 
-div {
+.purple {
   background-color: purple;
+  top: 360px;
+  left: 720px;
+}
+
+.blue {
+  background-color: blue;
+  top: 360px;
+  left: 1440px;
+}
+
+.obstacle {
   position: absolute;
   width: 240px;
   height: 240px;
-  top: 360px;
-  left: 720px;
 }
 
 .north {
