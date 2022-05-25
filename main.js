@@ -54,6 +54,8 @@ var x = 0;
 var y = 0;
 speed = 15;
 
+$obstacle = document.querySelectorAll('.obstacle');
+
 function start() {
   if ($image.className === 'east') {
     x = x + speed;
@@ -68,11 +70,14 @@ function start() {
     y = y - speed;
     $image.style.top = y + 'px';
   }
-  if ($image.getBoundingClientRect().x > 450 && $image.getBoundingClientRect().x < 925 && $image.getBoundingClientRect().y > 150 && $image.getBoundingClientRect().y < 550) {
-    clearInterval(movement);
-    isTheCarMoving = false;
-    crash = true;
-    $image.src = 'https://assets.stickpng.com/images/580b585b2edbce24c47b264f.png';
-    $image.alt = 'explosion';
+  for (var i = 0; i < $obstacle.length; i++) {
+    if ($image.getBoundingClientRect().x > $obstacle[i].getBoundingClientRect().x - ($obstacle[i].clientWidth) && $image.getBoundingClientRect().x < $obstacle[i].getBoundingClientRect().x + ($obstacle[i].clientWidth)
+      && $image.getBoundingClientRect().y > $obstacle[i].getBoundingClientRect().y - ($obstacle[i].clientHeight) && $image.getBoundingClientRect().y < $obstacle[i].getBoundingClientRect().y + ($obstacle[i].clientHeight)) {
+      clearInterval(movement);
+      isTheCarMoving = false;
+      crash = true;
+      $image.src = 'https://assets.stickpng.com/images/580b585b2edbce24c47b264f.png';
+      $image.alt = 'explosion';
+    }
   }
 }
