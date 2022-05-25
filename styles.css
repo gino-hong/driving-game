@@ -2,6 +2,29 @@ body {
   background-color: green;
 }
 
+img {
+  width: 240px;
+  position: absolute;
+}
+
+.purple {
+  background-color: purple;
+  top: 360px;
+  left: 720px;
+}
+
+.blue {
+  background-color: blue;
+  top: 360px;
+  left: 1440px;
+}
+
+.obstacle {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+}
+
 .north {
   transform: rotate(-90deg);
 }
@@ -16,9 +39,4 @@ body {
 
 .east {
   transform: rotate(0deg);
-}
-
-img {
-  width: 240px;
-  position: absolute;
 }
