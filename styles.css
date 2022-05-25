@@ -7,9 +7,13 @@ img {
   position: absolute;
 }
 
-.pokemon {
+div {
+  background-color: purple;
+  position: absolute;
+  width: 240px;
+  height: 240px;
   top: 360px;
-  left: 940px;
+  left: 720px;
 }
 
 .north {
